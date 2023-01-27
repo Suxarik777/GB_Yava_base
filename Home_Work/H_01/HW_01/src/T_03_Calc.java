@@ -20,11 +20,11 @@ public class T_03_Calc {
     }
 
     public static String InputStringActiv(String text){
-        System.out.println(text);
-        if(iScanner.hasNextLine()){
-            return iScanner.nextLine();
-        }
-        return "";
+        System.out.println(text + "\n");
+        iScanner.nextLine();
+        return iScanner.nextLine();
+
+
     }
 
     public static boolean CheckActivFunc(String userInput){
