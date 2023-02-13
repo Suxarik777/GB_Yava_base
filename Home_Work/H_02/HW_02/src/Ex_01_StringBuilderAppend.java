@@ -10,7 +10,7 @@
 
 import java.util.Scanner;
 
-public class Ex_01 {
+public class Ex_01_StringBuilderAppend {
 
     public static Scanner iScanner = new Scanner(System.in);
 
