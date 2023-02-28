@@ -20,7 +20,7 @@ public class Notebook {
     public String getHD() {return hD;}
     public String getOS() {return oS;}
     public String getColour() {return colour;}
-
+    public int getPrice() {return price;}
 
     @Override
     public String toString() {

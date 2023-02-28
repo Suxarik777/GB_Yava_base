@@ -55,6 +55,7 @@ public class Main {
 
         String userSelectMenu = menu();
 
+        // 1 часть задания
         if (userSelectMenu.equals("1")) {
             Map<String, String> selectNotebookMap = new HashMap<>();
             userSelectNotebook(selectNotebookMap);
@@ -62,18 +63,10 @@ public class Main {
 
             filterExport(notebookHashSet, selectNotebookMap);
         }
+        // 2 часть задания
         else{
-            TreeSet<Notebook> sortedNotebook = new TreeSet<>(Arrays.asList(notebook1,
-                    notebook2,
-                    notebook3,
-                    notebook4,
-                    notebook5));
-
-            System.out.println(sortedNotebook);
-            //sortsExport(notebookHashSet);
+            sortsExport(notebookHashSet);
         }
-
-
 
         iScanner.close();
     }
@@ -164,7 +157,22 @@ public class Main {
         }
     }
 
-    public static void sortsExport(HashSet<Notebook> collectionNotebook){
-        TreeSet<Notebook> sortedNotebook = new TreeSet<>();
+    public static void sortsExport(HashSet<Notebook> notebookHashSet){
+        System.out.println("Выберете пункт меню:" +
+                "\n1 - Вывести коллекцию ноутбуков без сортировки" +
+                "\n2 - Сортировать коллекцию ноутбуков по имени" +
+                "\n3 - Сортировать коллекцию ноутбуков по цене");
+        String userInput = iScanner.nextLine();
+
+        if(userInput.equals("1")) System.out.println(notebookHashSet);
+        else if (userInput.equals("2")) {
+            Set<Notebook> sortsNotebookName = new TreeSet<>(Comparator.comparing(Notebook::getName));
+            sortsNotebookName.addAll(notebookHashSet);
+            System.out.println(sortsNotebookName);
+        } else if (userInput.equals("3")) {
+            Set<Notebook> sortsNotebookPrice = new TreeSet<>(Comparator.comparing(Notebook::getPrice));
+            sortsNotebookPrice.addAll(notebookHashSet);
+            System.out.println(sortsNotebookPrice);
+        }
     }
 }
