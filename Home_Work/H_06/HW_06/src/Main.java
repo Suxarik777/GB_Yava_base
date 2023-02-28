@@ -51,7 +51,7 @@ public class Main {
                                                                         notebook4,
                                                                         notebook5));
 
-        // 1 часть задания
+
 
         String userSelectMenu = menu();
 
@@ -63,7 +63,14 @@ public class Main {
             filterExport(notebookHashSet, selectNotebookMap);
         }
         else{
-            sortsExport(notebookHashSet);
+            TreeSet<Notebook> sortedNotebook = new TreeSet<>(Arrays.asList(notebook1,
+                    notebook2,
+                    notebook3,
+                    notebook4,
+                    notebook5));
+
+            System.out.println(sortedNotebook);
+            //sortsExport(notebookHashSet);
         }
 
 
@@ -158,9 +165,6 @@ public class Main {
     }
 
     public static void sortsExport(HashSet<Notebook> collectionNotebook){
-        TreeSet<Notebook> sortsNotebook = new TreeSet<>();
-        sortsNotebook.addAll(collectionNotebook);
-
-        System.out.println(sortsNotebook.toString());
+        TreeSet<Notebook> sortedNotebook = new TreeSet<>();
     }
 }
