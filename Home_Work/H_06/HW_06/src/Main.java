@@ -77,10 +77,9 @@ public class Main {
                 "\n1 - Начать задачу по вводу критериев и фильтрации" +
                 "\n2 - Отсортировать ноутбуки первоночального множества");
         String userInput = iScanner.nextLine();
-        if (!userInput.equals("1") || !userInput.equals("2")){
-            System.out.println("Вы ввели что-то не то");
-            menu();
-        }
+        if (userInput.equals("1") || userInput.equals("2")){
+            return userInput;
+        } else { menu(); }
         return userInput;
     }
     public static void userSelectNotebook(Map<String, String> selectNotebookMap){
@@ -159,6 +158,9 @@ public class Main {
     }
 
     public static void sortsExport(HashSet<Notebook> collectionNotebook){
+        TreeSet<Notebook> sortsNotebook = new TreeSet<>();
+        sortsNotebook.addAll(collectionNotebook);
 
+        System.out.println(sortsNotebook.toString());
     }
 }
